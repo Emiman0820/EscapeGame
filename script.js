@@ -7,7 +7,7 @@ function clickClock() {
   }
   
   function clickBox() {
-    alert("箱を調べた。");
+    showImage("images/lock_box.jpg");
   }
 
   function clickDoor() {
@@ -15,7 +15,7 @@ function clickClock() {
   }
 
   function clickSyodana() {
-    alert("書棚を調べた。");
+    showImage("images/warning_goma_shodana.png");
   }
 
   function showImage(imagePath) {
