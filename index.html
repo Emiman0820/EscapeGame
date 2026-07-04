@@ -13,16 +13,16 @@
     <button class="spot clock" onclick="clickClock()"></button>
     <button class="spot pc" onclick="clickPC()"></button>
     <button class="spot box" onclick="clickBox()"></button>
-    <button class="spot door" onclick="clickDoor()"></button>
     <button class="spot syodana" onclick="clickSyodana()"></button>
+    <div class="spot door" onclick="showImage('images/warning_goma.png')"></div>
   </div>
 
   <div id="modal" class="hidden">
     <div id="modalBox">
-      <button id="closeBtn" onclick="closeModal()">×</button>
-      <img id="modalImage" src="">
+        <button id="closeBtn" onclick="closeModal()">×</button>
+        <img id="modalImage" src="" alt="">
     </div>
-  </div>
+</div>
 
   <script src="script.js"></script>
 </body>

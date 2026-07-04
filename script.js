@@ -17,3 +17,16 @@ function clickClock() {
   function clickSyodana() {
     alert("書棚を調べた。");
   }
+
+  function showImage(imagePath) {
+
+    document.getElementById("modalImage").src = imagePath;
+    document.getElementById("modal").classList.remove("hidden");
+
+}
+
+function closeModal() {
+
+    document.getElementById("modal").classList.add("hidden");
+
+}

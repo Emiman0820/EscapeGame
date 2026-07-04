@@ -59,34 +59,44 @@ body {
 
   .hidden {
     display: none;
-  }
-  
-  #modal {
+}
+
+#modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0,0,0,0.8);
+
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #modal.hidden {
+
+    z-index: 1000;
+}
+
+#modal.hidden {
     display: none;
-  }
-  
-  #modalBox {
+}
+
+#modalBox {
     position: relative;
-  }
-  
-  #modalImage {
-    max-width: 80vw;
-    max-height: 80vh;
-  }
-  
-  #closeBtn {
+}
+
+#modalImage {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#closeBtn {
     position: absolute;
-    right: -10px;
-    top: -10px;
-    font-size: 24px;
+    top: -15px;
+    right: -15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
     cursor: pointer;
-  }
+    font-size: 22px;
+}
