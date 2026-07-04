@@ -56,3 +56,37 @@ body {
     width: 170px;
     height: 360px;
   }
+
+  .hidden {
+    display: none;
+  }
+  
+  #modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #modal.hidden {
+    display: none;
+  }
+  
+  #modalBox {
+    position: relative;
+  }
+  
+  #modalImage {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+  
+  #closeBtn {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    cursor: pointer;
+  }

@@ -11,7 +11,7 @@ function clickClock() {
   }
 
   function clickDoor() {
-    alert("ドアを調べた。");
+    showImage("images/warning_goma.png");
   }
 
   function clickSyodana() {
