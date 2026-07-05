@@ -198,3 +198,113 @@ body {
     opacity: 0.2;
   }
 }
+
+#storyScreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
+
+#characterImage {
+  position: absolute;
+  left: 40px;
+  bottom: 160px;
+
+  height: 85%;
+  max-height: 700px;
+
+  pointer-events: none;
+
+  /* 少し影を付けると立体感が出る */
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.7));
+}
+
+#storyWindow {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  width: 90%;
+  height: 180px;
+
+  background: rgba(0,0,0,0.85);
+  border: 3px solid white;
+  border-radius: 8px;
+
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.talking {
+  filter: brightness(100%)
+          drop-shadow(0 0 20px rgba(0,0,0,.7));
+}
+
+.waiting {
+  filter: brightness(40%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+#storyScreen:not(.hidden) {
+  display: block;
+}
+
+#speakerName {
+  position: absolute;
+  top: -45px;
+  left: 20px;
+
+  padding: 8px 24px;
+  background: #111;
+  border: 3px solid white;
+  color: white;
+
+  font-size: 20px;
+}
+
+#storyMessage {
+  color: white;
+  font-size: 24px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+#nextStoryBtn {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.character {
+  position: absolute;
+  bottom: 160px;
+  height: 85%;
+  max-height: 700px;
+  pointer-events: none;
+  transition: 0.3s;
+  filter: brightness(45%) drop-shadow(0 0 20px rgba(0,0,0,.7));
+}
+
+.leftCharacter {
+  left: 40px;
+}
+
+.rightCharacter {
+  right: 40px;
+}
+
+.character.talking {
+  filter: brightness(100%) drop-shadow(0 0 20px rgba(0,0,0,.7));
+}
