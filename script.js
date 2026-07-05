@@ -8,7 +8,7 @@ function clickClock() {
   }
   
   function clickPC() {
-    alert("PCを調べた。");
+    alert("PCを調べた");
   }
   
   function clickBox() {
