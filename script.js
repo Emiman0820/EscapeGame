@@ -1,3 +1,8 @@
+function startGame() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("game").classList.remove("hidden");
+}
+
 function clickClock() {
     alert("時計を調べた。");
   }
@@ -19,14 +24,10 @@ function clickClock() {
   }
 
   function showImage(imagePath) {
-
     document.getElementById("modalImage").src = imagePath;
     document.getElementById("modal").classList.remove("hidden");
-
 }
 
 function closeModal() {
-
     document.getElementById("modal").classList.add("hidden");
-
 }

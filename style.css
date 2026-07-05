@@ -58,8 +58,8 @@ body {
   }
 
   .hidden {
-    display: none;
-}
+    display: none !important;
+  }
 
 #modal {
     position: fixed;
@@ -99,4 +99,102 @@ body {
 
     cursor: pointer;
     font-size: 22px;
+}
+
+#startScreen {
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+#startScreen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/title.png");
+  background-size: 100%;
+  background-position: center 30%;
+
+  opacity: 0.15;   /* ←ここで薄さを調整 */
+
+  z-index: 0;
+}
+
+#startScreen h1,
+.subtitle,
+.description,
+#startScreen button {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  animation-delay: 0.5s;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+.description {
+  animation-delay: 1s;
+}
+
+#startScreen button {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.subtitle {
+  font-size: 22px;
+  color: #bbb;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-bottom: 70px;
+}
+
+#version {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #888;
+}
+
+.pressStart {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.2;
+  }
 }
