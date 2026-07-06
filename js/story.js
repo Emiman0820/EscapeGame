@@ -14,6 +14,8 @@
 let storyIndex = 0;
 
 function startGame() {
+    preloadGameImages();
+
     const startScreen = document.getElementById("startScreen");
     const storyScreen = document.getElementById("storyScreen");
   
