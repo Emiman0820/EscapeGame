@@ -11,8 +11,16 @@
     <h1>Escape Game</h1>
     <p class="subtitle">― 謎の部屋から脱出せよ ―</p>
 
-    <button class="pressStart" onclick="startGame()">Press Start</button>
-    <p id="version">Version α 0.0.1</p>
+    <div class="buttonArea">
+      <button class="menuButton" onclick="startGame()">
+          Press Start
+      </button>
+  
+      <button class="menuButton" onclick="openReleaseNotes()">
+          Release Notes
+      </button>
+    </div>
+    <p id="version">Version α 0.0.2</p>
   </div>
 
   <div id="storyScreen" class="hidden">
@@ -20,11 +28,10 @@
     <img id="rightCharacter" class="character rightCharacter hidden" src="">
 
     <div id="storyWindow" onclick="nextStory()">
-        <div id="speakerName"></div>
-        <div id="storyMessage"></div>
-        <button id="nextStoryBtn">▼</button>
+      <div id="speakerName"></div>
+      <div id="storyMessage"></div>
+      <button id="nextStoryBtn">▼</button>
     </div>
-
   </div>
 
   <div id="game" class="hidden">
@@ -32,9 +39,28 @@
 
     <button class="spot clock" onclick="clickClock()"></button>
     <button class="spot pc" onclick="clickPC()"></button>
-    <button class="spot box" onclick="showImage('images/lock_box.jpg')"></button>
-    <button class="spot syodana" onclick="showImage('images/warning_goma_shodana.png')"></button>
-    <button class="spot door" onclick="showImage('images/warning_goma.png')"></button>
+    <button class="spot box" onclick="clickBox()"></button>
+    <button class="spot syodana" onclick="clickSyodana()"></button>
+    <button class="spot door" onclick="clickDoor()"></button>
+
+    <div id="tipsBox">
+      <span id="tipsTitle">Tips</span>
+      <span id="tipsText">気になる場所をクリックして調べよう。</span>
+    </div>
+  </div>
+
+  <div id="releaseNotes" class="hidden">
+    <div id="releaseNotesBox">
+      <button id="releaseCloseBtn" onclick="closeReleaseNotes()">×</button>
+  
+      <h2>Release Notes</h2>
+  
+      <h3>Version α 0.0.2</h3>
+      <ul>
+        <li>会話パートを追加</li>
+        <li>左右の立ち絵表示に対応</li>
+      </ul>
+    </div>
   </div>
 
   <div id="modal" class="hidden">
@@ -44,6 +70,11 @@
     </div>
 </div>
 
-  <script src="script.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/screen.js"></script>
+  <script src="js/firstroom.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
