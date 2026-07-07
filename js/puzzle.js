@@ -4,12 +4,17 @@ function openPuzzle(id){
 
     currentPuzzle = puzzles[id];
 
-    showImage(
-        currentPuzzle.image,
-        currentPuzzle.text
-    );
+    document.getElementById("modalImage").src = currentPuzzle.image;
+
+    document.getElementById("modalText").textContent =
+        currentPuzzle.text;
 
     document.getElementById("answerInput").value = "";
+
+    // ←ここだけ表示
+    document.getElementById("puzzleSide").style.display = "block";
+
+    document.getElementById("modal").classList.remove("hidden");
 }
 
 function checkAnswer(){

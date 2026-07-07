@@ -11,10 +11,12 @@
 
 let currentAnswer = "";
 
-function showImage(imagePath,text=""){
+function showImage(imagePath) {
 
     document.getElementById("modalImage").src = imagePath;
-    document.getElementById("modalText").textContent = text;
+
+    // 謎用UIは隠す
+    document.getElementById("puzzleSide").style.display = "none";
 
     document.getElementById("modal").classList.remove("hidden");
 }

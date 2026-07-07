@@ -65,18 +65,23 @@
 
   <div id="modal" class="hidden">
     <div id="modalBox">
-
-        <button id="closeBtn" onclick="closeModal()">×</button>
-
+      <button id="closeBtn" onclick="closeModal()">×</button>
+  
+      <div id="puzzleLayout">
         <img id="modalImage" src="" alt="">
-
-        <button
-            id="modalMemoSpot"
-            class="hidden"
-            onclick="clickPcMemo()">
-        </button>
-
-        <div id="modalText"></div>
+  
+        <div id="puzzleSide">
+          <div id="modalText"></div>
+  
+          <div id="answerArea">
+            <label>回答：</label>
+            <input type="text" id="answerInput">
+            <button onclick="checkAnswer()">決定</button>
+          </div>
+        </div>
+      </div>
+  
+      <button id="modalMemoSpot" class="hidden" onclick="clickPcMemo()"></button>
     </div>
   </div>
 
