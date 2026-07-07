@@ -19,11 +19,12 @@ function clickClock() {
 //PC
 function clickPC() {
     showImage("images/pc_keyboard.jpg");
-}
+    document.getElementById("modalMemoSpot").classList.remove("hidden");
+  }
 
 //箱
 function clickBox() {
-    showImage("images/lock_box.jpg");
+    showImage("images/nazo2.jpg");
 }
 
 //ドア
@@ -35,3 +36,13 @@ function clickDoor() {
 function clickSyodana() {
     showImage("images/warning_goma_shodana.png");
 }
+
+function clickMemo(){
+    openPuzzle("circle1");
+}
+
+function showPcView() {
+    showImage("images/pc_keyboard.jpg", "PCの画面だ。メモが貼られている。");
+  
+    document.getElementById("modalMemoSpot").classList.remove("hidden");
+  }

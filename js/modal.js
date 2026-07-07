@@ -9,14 +9,20 @@
 ====================================
 */
 
-function showImage(imagePath) {
+let currentAnswer = "";
+
+function showImage(imagePath,text=""){
+
     document.getElementById("modalImage").src = imagePath;
+    document.getElementById("modalText").textContent = text;
+
     document.getElementById("modal").classList.remove("hidden");
-  }
+}
   
 function closeModal() {
     document.getElementById("modal").classList.add("hidden");
-}
+    document.getElementById("modalMemoSpot").classList.add("hidden");
+  }
 
 function openReleaseNotes() {
     document.getElementById("releaseNotes").classList.remove("hidden");

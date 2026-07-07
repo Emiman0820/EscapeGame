@@ -65,10 +65,20 @@
 
   <div id="modal" class="hidden">
     <div id="modalBox">
+
         <button id="closeBtn" onclick="closeModal()">×</button>
+
         <img id="modalImage" src="" alt="">
+
+        <button
+            id="modalMemoSpot"
+            class="hidden"
+            onclick="clickPcMemo()">
+        </button>
+
+        <div id="modalText"></div>
     </div>
-</div>
+  </div>
 
   <script src="js/preload.js"></script>
   <script src="js/data.js"></script>
@@ -77,5 +87,11 @@
   <script src="js/firstroom.js"></script>
   <script src="js/story.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/pc.js"></script>
+  <script src="js/puzzle.js"></script>
+
+  <audio id="startVoice" preload="auto">
+    <source src="voice/start.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>

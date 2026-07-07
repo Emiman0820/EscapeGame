@@ -16,6 +16,8 @@ let storyIndex = 0;
 function startGame() {
     preloadGameImages();
 
+    document.getElementById("startVoice").play();
+
     const startScreen = document.getElementById("startScreen");
     const storyScreen = document.getElementById("storyScreen");
   
@@ -30,7 +32,7 @@ function startGame() {
   
       storyIndex = 0;
       showStory();
-    }, 1200);
+    }, 2500);
 }
 
 function showStory() {
@@ -43,12 +45,16 @@ function showStory() {
   const right = document.getElementById("rightCharacter");
 
   if (data.leftImage) {
-    left.src = data.leftImage;
+    if (data.leftImage && left.src !== location.origin + "/" + data.leftImage) {
+        left.src = data.leftImage;
+    }
     left.classList.remove("hidden");
   }
 
   if (data.rightImage) {
-    right.src = data.rightImage;
+    if (data.rightImage && right.src !== location.origin + "/" + data.rightImage) {
+        right.src = data.rightImage;
+    }
     right.classList.remove("hidden");
   }
 
@@ -65,6 +71,26 @@ function showStory() {
 }
 
 function nextStory() {
+  if (currentEventStory) {
+    eventStoryIndex++;
+
+    if (eventStoryIndex >= currentEventStory.length) {
+      currentEventStory = null;
+
+      document.getElementById("storyScreen").classList.add("hidden");
+      document.getElementById("game").classList.remove("hidden");
+
+      if (afterEventStory) {
+        afterEventStory();
+        afterEventStory = null;
+      }
+
+      return;
+    }
+
+    showEventStory();
+    return;
+  }
     storyIndex++;
 
     if (storyIndex >= storyMessages.length) {
@@ -90,4 +116,48 @@ function nextStory() {
     }
   
     showStory();
+}
+
+let currentEventStory = null;
+let eventStoryIndex = 0;
+let afterEventStory = null;
+
+function startEventStory(storyId) {
+  currentEventStory = eventStories[storyId];
+  eventStoryIndex = 0;
+
+  afterEventStory = function() {
+    openPuzzle("circle1");
+  };
+
+  document.getElementById("game").classList.add("hidden");
+  document.getElementById("storyScreen").classList.remove("hidden");
+
+  showEventStory();
+}
+
+function showEventStory() {
+  const data = currentEventStory[eventStoryIndex];
+
+  document.getElementById("speakerName").textContent = data.speaker;
+  document.getElementById("storyMessage").textContent = data.text;
+
+  const left = document.getElementById("leftCharacter");
+  const right = document.getElementById("rightCharacter");
+
+  if (data.leftImage) {
+    left.src = data.leftImage;
+    left.classList.remove("hidden");
+  }
+
+  if (data.rightImage) {
+    right.src = data.rightImage;
+    right.classList.remove("hidden");
+  }
+
+  left.classList.remove("talking");
+  right.classList.remove("talking");
+
+  if (data.side === "left") left.classList.add("talking");
+  if (data.side === "right") right.classList.add("talking");
 }

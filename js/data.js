@@ -139,3 +139,45 @@ const storyMessages = [
         text: "それじゃがんばってね～"
     }
   ];
+
+//イベントデータ
+const eventStories = {
+    pcMemo: [
+      {
+        speaker: "ゴマニエル",
+        side: "left",
+        leftImage: "images/gimongoma.png",
+        text: "なんやこのメモ……？"
+      },
+      {
+        speaker: "トーコホッパー",
+        side: "right",
+        rightImage: "images/gimonhopper.png",
+        text: "これ、謎解きじゃない？"
+      },
+      {
+        speaker: "トーコホッパー",
+        side: "right",
+        rightImage: "images/hopper.png",
+        text: "ほら、裏になにか書いてあるよ！"
+      },
+    ]
+  };
+
+//謎データ
+const puzzles = {
+
+    circle1: {
+        image: "images/nazo1.png",
+        text: "4分の1に内接している長方形ABCDがある。Bが円の中心だとして長方形の対角線ACの長さは何センチか",
+        answer: "10"
+    },
+
+    password1: {
+        image: "images/password.png",
+        text: "4桁の数字を入力せよ。",
+        answer: "5910"
+    }
+
+};
+

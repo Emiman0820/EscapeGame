@@ -467,3 +467,45 @@ body {
 #tipsText {
   color: #ddd;
 }
+
+#answerArea{
+
+  margin-top:20px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+#answerInput{
+
+  width:250px;
+
+  padding:8px 12px;
+
+  font-size:20px;
+}
+
+#answerArea button{
+
+  padding:8px 18px;
+
+  font-size:18px;
+
+  cursor:pointer;
+}
+
+#modalMemoSpot {
+  position: absolute;
+
+  left: 60%;
+  top: 42%;
+
+  width: 250px;
+  height: 250px;
+
+  background: rgba(255,255,255,0.2);
+  border: 2px solid red;
+  cursor: pointer;
+}
